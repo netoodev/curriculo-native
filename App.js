@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity, Image, Linking } from 'react-
 // Componentes de página
 const PaginaInicial = () => {
   return (
-    <View style={styles.pagina}>
+    <View style={styles.home}>
       <Image style={styles.profilePic} source={require('./assets/netoodev-profile.jpg')}/>
       <Text style={styles.titleHome}>Olá, mundo!</Text>
       <Text style={styles.subHome}>Sou Neto, o Developer.</Text>
@@ -23,7 +23,23 @@ const PaginaInicial = () => {
 const Pagina1 = () => {
   return (
     <View style={styles.pagina}>
-      <Text style={styles.textoPagina}>Conteúdo da Página 1</Text>
+      <View style={styles.paginaTitle}>
+        <Text style={styles.subPagina}>Um pouco</Text>
+        <Text style={styles.titlePagina}>Sobre mim</Text>
+      </View>
+      <View style={styles.mosaic}>
+        <Image style={styles.mosaicImg} source={require('./assets/image1.jpeg')}/>
+        <Image style={styles.mosaicImg} source={require('./assets/image2.webp')}/>
+        <Image style={styles.mosaicImg} source={require('./assets/image3.jpg')}/>
+        <Image style={styles.mosaicImg} source={require('./assets/image4.jpg')}/>
+        <Image style={styles.mosaicImg} source={require('./assets/image5.jpg')}/>
+      </View>
+      <View style={styles.contentText}>
+        <Text style={styles.textoPagina}>Graduando em <Text style={styles.textoDestaque}>Análise e Desenvolvimento de Sistemas</Text> na Faculdade Senac através do Programa Embarque Digital oferecido pela parceria entre a Prefeitura do Recife e o Porto Digital.</Text>
+        <Text style={styles.textoPagina}>Possuo forte interesse na área de <Text style={styles.textoDestaque}>Desenvolvimento Web Full Stack</Text>, como também em Desenvolvimento Mobile. Sou um entusiasta quando se trata de aprender novas tecnologias e encarar desafios.</Text>
+        <Text style={styles.textoPagina}>Atualmente, estou em busca da minha <Text style={styles.textoDestaque}>primeira experiência profissional na área de TI</Text>. Me considero um profissional dedicado, resiliente e adaptável a novas situações, o que me auxilia a superar eventuais dificuldades.</Text>
+      </View>
+
     </View>
   );
 };
@@ -109,8 +125,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#FAFAFA',
+    display: 'flex',
     paddingTop: 24,
   },
   header: {
@@ -149,18 +164,25 @@ const styles = StyleSheet.create({
     color: '#8D69BF',
   },
   content: {
-    flex: 1,
+    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  pagina: {
-    flex: 1,
+  home: {
+    marginTop: 80,
+    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     gap: 16,
   },
   textoPagina: {
-    fontSize: 18,
+    fontSize: 22,
+    color: '#351B59',
+    fontWeight: '400',
+    textAlign: 'left',
+  },
+  textoDestaque: {
+    color: '#8D69BF',
   },
   profilePic: {
     width: 300,
@@ -187,6 +209,50 @@ const styles = StyleSheet.create({
   iconImg: {
     width: 40,
     height: 40,
+  },
+  pagina: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  paginaTitle: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    marginVertical: 24,
+  },
+  titlePagina: {
+    fontSize: 36,
+    fontWeight: '500',
+    color: '#8D69BF',
+  },
+  subPagina: {
+    fontSize: 24,
+    fontWeight: '400',
+    color: '#351B59',
+  },
+  mosaic: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    width: '100%',
+    height: 80,
+    gap: 5,
+  },
+  mosaicImg: {
+    width: 80,
+    height: 80,
+  },
+  contentText: {
+    marginTop: 24,
+    width: '80%',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    gap: 16,
   }
 });
 
