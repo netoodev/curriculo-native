@@ -47,7 +47,14 @@ const Pagina1 = () => {
 const Pagina2 = () => {
   return (
     <View style={styles.pagina}>
-      <Text style={styles.textoPagina}>Conteúdo da Página 2</Text>
+      <View style={styles.paginaTitle}>
+        <Text style={styles.subPagina}>Minhas</Text>
+        <Text style={styles.titlePagina}>Habilidades</Text>
+      </View>
+      <View styles={styles.habilidades}>
+        <Text style={styles.titlePagina}>Hard Skills</Text>
+
+      </View>
     </View>
   );
 };
@@ -253,6 +260,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'flex-start',
     gap: 16,
+  },
+  habilidades: {
+    width: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   }
 });
 
