@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, Linking } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, Linking, ScrollView } from 'react-native';
 
 // Componentes de página
 const PaginaInicial = () => {
@@ -52,17 +52,42 @@ const Pagina2 = () => {
         <Text style={styles.titlePagina}>Habilidades</Text>
       </View>
       <View styles={styles.habilidades}>
-        <Text style={styles.titlePagina}>Hard Skills</Text>
+        <View styles={styles.hardSkills}>
+          <View style={styles.habilidade}>
+            <Text style={styles.skill}>HTML</Text>
+            <Text style={styles.level}>Avançado</Text>
+          </View>
+          <View style={styles.habilidade}>
+            <Text style={styles.skill}>CSS</Text>
+            <Text style={styles.level}>Intermediário</Text>
+          </View>
+          <View style={styles.habilidade}>
+            <Text style={styles.skill}>JavaScript</Text>
+            <Text style={styles.level}>Intermediário</Text>
+          </View>
+          <View style={styles.habilidade}>
+            <Text style={styles.skill}>Bootstrap</Text>
+            <Text style={styles.level}>Básico</Text>
+          </View>
+          <View style={styles.habilidade}>
+            <Text style={styles.skill}>.NET</Text>
+            <Text style={styles.level}>Básico</Text>
+          </View>
+          <View style={styles.habilidade}>
+            <Text style={styles.skill}>Git</Text>
+            <Text style={styles.level}>Intermediário</Text>
+          </View>
+          <View style={styles.habilidade}>
+            <Text style={styles.skill}>Python</Text>
+            <Text style={styles.level}>Básico</Text>
+          </View>
+          <View style={styles.habilidade}>
+            <Text style={styles.skill}>Java</Text>
+            <Text style={styles.level}>Básico</Text>
+          </View>
+        </View>
 
       </View>
-    </View>
-  );
-};
-
-const Pagina3 = () => {
-  return (
-    <View style={styles.pagina}>
-      <Text style={styles.textoPagina}>Conteúdo da Página 3</Text>
     </View>
   );
 };
@@ -89,8 +114,6 @@ const App = () => {
         return <Pagina1 />;
       case 'Página 2':
         return <Pagina2 />;
-      case 'Página 3':
-        return <Pagina3 />;
       default:
         return null;
     }
@@ -117,9 +140,6 @@ const App = () => {
           </TouchableOpacity>
           <TouchableOpacity style={styles.menuItem} onPress={() => navegarPara('Página 2')}>
             <Text style={styles.menuItemText}>Habilidades</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.menuItem} onPress={() => navegarPara('Página 3')}>
-            <Text style={styles.menuItemText}>Projetos</Text>
           </TouchableOpacity>
         </View>
       )}
@@ -267,6 +287,28 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'flex-start',
     alignItems: 'center',
+  },
+  hardSkills: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 24,
+  },
+  habilidade: {
+    display: 'flex',
+    marginTop: 24,
+    gap: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  skill: {
+    fontSize: 24,
+    color: '#351B59',
+  },
+  level: {
+    fontSize: 18,
+    color: '#8D69BF',
   }
 });
 
